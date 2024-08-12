@@ -4,7 +4,8 @@ export default [
     profileImg: "",
     profileName: "oldMoneylook",
     postImg:
-      "/images/GettyImages-2148588216-9dd16a74faa64bc1a236fc882ee36eba.jpg",
+      // "/images/GettyImages-2148588216-9dd16a74faa64bc1a236fc882ee36eba.jpg",
+      "https://thumbs.dreamstime.com/z/school-qoutes-lettering-read-handwritten-inscription-positive-quote-calligraphy-vector-illustration-text-sign-design-book-272366131.jpg",
     caption: "no caption",
   },
 
