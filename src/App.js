@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Post from "./components/Post";
+import Posts from "./components/Posts";
+import postsData from "./components/postsData";
+import { useState } from "react";
+import { useEffect } from "react";
+import SavedPosts from "./components/SavedPosts";
 
 function App() {
+  const [posts, setPosts] = useState(postsData);
+  const [displaySavedPosts, setDisplaySaved] = useState(false);
+
+  const showAllPosts = () => {
+    setDisplaySaved(false);
+  };
+
+  const showSavedPosts = () => {
+    setDisplaySaved(true);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="main-buttons">
+        <button className="allposts-btn" onClick={showAllPosts}>
+          Home
+        </button>
+        <button onClick={showSavedPosts} className="savedPosts-btn">
+          {" "}
+          Saved
+        </button>
+      </div>
+
+      {displaySavedPosts ? <SavedPosts /> : <Posts posts={posts} />}
     </div>
   );
 }
